@@ -8,7 +8,7 @@ security:
 
     providers:
         fos_userbundle:
-            id: fos_user.user_provider.username
+            id: fos_user.user_provider.username_email
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -21,12 +21,16 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
-
+                require_previous_session: false
             logout:       true
             anonymous:    true
+            remember_me:
+                key:      "%secret%"
+                lifetime: 20
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/, role: ROLE_USER }

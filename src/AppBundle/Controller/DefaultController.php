@@ -18,4 +18,17 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
         ));
     }
+
+
+    /**
+     * @Route("/expire-session", name="expire-session")
+     */
+    public function expireSessionAction(Request $request)
+    {
+        dump($_SESSION);
+        exit();
+
+        // replace this example code with whatever you need
+        return $this->render('default/expire.html.twig');
+    }
 }
