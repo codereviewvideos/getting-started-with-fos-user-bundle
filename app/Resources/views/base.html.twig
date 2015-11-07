@@ -9,9 +9,13 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     {% block stylesheets %}{% endblock %}
+    {% stylesheets
+        'css/my-style.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 
     <title>{% block title %}Something Clever Here!{% endblock %}</title>
-
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -25,6 +29,8 @@
 </head>
 
 <body>
+
+{% include '::topnav.html.twig' %}
 
 <div class="container">
     {% block content %}{% endblock %}
