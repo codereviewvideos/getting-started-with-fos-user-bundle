@@ -21,14 +21,18 @@ class DefaultController extends Controller
 
 
     /**
-     * @Route("/expire-session", name="expire-session")
+     * @Route("/secured/some-page", name="some-secured-page")
      */
-    public function expireSessionAction(Request $request)
+    public function securePageAction(Request $request)
     {
-        dump($_SESSION);
-        exit();
+        return $this->render('secure/secure.html.twig', ['text'=>'lorum ipsum']);
+    }
 
-        // replace this example code with whatever you need
-        return $this->render('default/expire.html.twig');
+    /**
+     * @Route("/secured/another-page", name="another-secured-page")
+     */
+    public function anotherSecurePageAction(Request $request)
+    {
+        return $this->render('secure/secure.html.twig', ['text'=>'cats and dogs']);
     }
 }
