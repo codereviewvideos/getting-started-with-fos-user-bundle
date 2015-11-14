@@ -13,15 +13,36 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
-        ));
+        // not advisable in real life, just a lazy demo hack
+        $routes = $this->get('routing.loader')->load(self::class)->all();
+
+        return $this->render('default/index.html.twig', [
+            'routes' => $routes,
+        ]);
     }
 
+    /**
+     * @Route("/alternative-login", name="alternative_login")
+     */
+    public function alternativeLoginAction(Request $request)
+    {
+        return $this->render('default/index.html.twig', [
+            'text' => 'an alternative log in page'
+        ]);
+    }
 
     /**
-     * @Route("/secured/some-page", name="some-secured-page")
+     * @Route("/alternative-logout", name="alternative_logout")
+     */
+    public function alternativeLogoutAction(Request $request)
+    {
+        return $this->render('default/index.html.twig', [
+            'text' => 'an alternative logout page'
+        ]);
+    }
+
+    /**
+     * @Route("/secured/some-page", name="some_secured_page")
      */
     public function securePageAction(Request $request)
     {
@@ -29,7 +50,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/secured/another-page", name="another-secured-page")
+     * @Route("/secured/another-page", name="another_secured_page")
      */
     public function anotherSecurePageAction(Request $request)
     {

@@ -90,3 +90,11 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    from_email:
+        address: chris@codereviewvideos.com
+        sender_name: Chris
+    registration:
+        confirmation:
+            from_email:
+                address: registered@codereviewvideos.com
+                sender_name: Chris Says Hi
