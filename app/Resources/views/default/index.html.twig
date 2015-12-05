@@ -7,19 +7,22 @@
                 <h1 class="text-center">FOS User Bundle Tutorial</h1>
             </div>
 
-            {% if routes is defined %}
-            <div>
-                {% for routeName, route in routes %}
-                <li><a href="{{ route.path }}">{{ routeName | replace('_', ' ') }}</a></li>
-                {% endfor %}
-            </div>
-            {% endif %}
-
             {% if text is defined %}
                 <div>
                     {{ text }}
                 </div>
             {% endif %}
+
+            <h2>Members Options</h2>
+            <ul>
+                <li><a href="{{ path('member_home') }}">Members Area</a></li>
+                <li><a href="{{ path('member_create') }}">Create new content</a></li>
+            </ul>
+
+            <h2>Admin Options</h2>
+            <ul>
+                <li><a href="{{ path('admin_home') }}">Admin Area</a></li>
+            </ul>
 
         </div>
     </div>

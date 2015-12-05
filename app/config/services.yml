@@ -19,3 +19,23 @@ services:
             - "%registration_enabled%"
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+
+
+    content_voter:
+        class: AppBundle\Security\Authorization\Voter\ContentVoter
+        public: false
+        tags:
+            - { name: security.voter }
+
+    super_content_voter:
+        class: AppBundle\Security\Authorization\Voter\SuperContentVoter
+        public: false
+        tags:
+            - { name: security.voter }
+
+    always_true_voter:
+        class: AppBundle\Security\Authorization\Voter\AlwaysTrueVoter
+        public: false
+        tags:
+            - { name: security.voter }

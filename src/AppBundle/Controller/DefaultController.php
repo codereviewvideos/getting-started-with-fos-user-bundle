@@ -41,19 +41,4 @@ class DefaultController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/secured/some-page", name="some_secured_page")
-     */
-    public function securePageAction(Request $request)
-    {
-        return $this->render('secure/secure.html.twig', ['text'=>'lorum ipsum']);
-    }
-
-    /**
-     * @Route("/secured/another-page", name="another_secured_page")
-     */
-    public function anotherSecurePageAction(Request $request)
-    {
-        return $this->render('secure/secure.html.twig', ['text'=>'cats and dogs']);
-    }
 }

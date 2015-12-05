@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div id="wrapper">
+        <div id="container">
+            <h1>Welcome to the Members Area</h1>
+
+            <a href="{{ path('member_create') }}">Create new Content</a>
+
+            {% if content is defined %}
+                <ul>
+                    {% for c in content %}
+                        <li>
+                            Edit : <a href="{{ path('member_edit', { id: c.id }) }}">{{ c.id }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if text is defined %}
+            <p>{{ text }}</p>
+            {% endif %}
+
+            <a href="{{ path('member_home') }}">Back to Member menu</a>
+
+        </div>
+    </div>
+{% endblock %}

@@ -19,7 +19,8 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "jms/i18n-routing-bundle": "^1.1"
+        "jms/i18n-routing-bundle": "^1.1",
+        "willdurand/faker-bundle": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

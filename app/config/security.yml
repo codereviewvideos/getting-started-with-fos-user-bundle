@@ -1,4 +1,7 @@
 security:
+    access_decision_manager:
+        strategy: consensus
+
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt
 
@@ -39,4 +42,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/secured/, role: ROLE_USER }
+        - { path: ^/members-area/, role: ROLE_USER }

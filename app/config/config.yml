@@ -80,10 +80,10 @@ swiftmailer:
     spool:     { type: memory }
 
 
-jms_i18n_routing:
-    default_locale: "%locale%"
-    locales: [en, fr, de, es]
-    strategy: prefix_except_default
+#jms_i18n_routing:
+#    default_locale: "%locale%"
+#    locales: [en, fr, de, es]
+#    strategy: prefix_except_default
 
 
 fos_user:

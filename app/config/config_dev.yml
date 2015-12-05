@@ -49,3 +49,12 @@ assetic:
 
 #swiftmailer:
 #    delivery_address: me@example.com
+
+
+bazinga_faker:
+    orm: doctrine
+#    entities:
+#        AppBundle\Entity\User:
+#            number: 5
+#        AppBundle\Entity\Content:
+#            number: 5
