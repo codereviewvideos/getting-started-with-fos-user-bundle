@@ -20,7 +20,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "jms/i18n-routing-bundle": "^1.1",
-        "willdurand/faker-bundle": "^1.2"
+        "willdurand/faker-bundle": "^1.2",
+        "rezzza/mailchimp-bundle": "^2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

@@ -98,3 +98,10 @@ fos_user:
             from_email:
                 address: registered@codereviewvideos.com
                 sender_name: Chris Says Hi
+
+
+rezzza_mail_chimp:
+    # Your MailChimp API Key
+    api_key:              5d56cf420f30ce2f5c746a0364cac921-us8
+    # Supported connections : http, https, stub
+    connection:           rezzza.mail_chimp.connection.https

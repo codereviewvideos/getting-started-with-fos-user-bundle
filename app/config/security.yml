@@ -1,6 +1,7 @@
 security:
     access_decision_manager:
         strategy: consensus
+        allow_if_equal_granted_denied: true
 
     encoders:
         FOS\UserBundle\Model\UserInterface: bcrypt

@@ -20,22 +20,32 @@ services:
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
+    registration_mailing_listener:
+        class: AppBundle\Event\RegistrationMailingListener
+        arguments:
+            - @rezzza.mail_chimp.client
+        tags:
+            - { name: kernel.event_listener, event: fos_user.registration.completed, method: onRegistrationCompleted }
+
+
 
 
     content_voter:
         class: AppBundle\Security\Authorization\Voter\ContentVoter
         public: false
+        priority: 255
         tags:
             - { name: security.voter }
 
-    super_content_voter:
-        class: AppBundle\Security\Authorization\Voter\SuperContentVoter
-        public: false
-        tags:
-            - { name: security.voter }
+#    super_content_voter:
+#        class: AppBundle\Security\Authorization\Voter\SuperContentVoter
+#        public: false
+#        tags:
+#            - { name: security.voter }
 
     always_true_voter:
         class: AppBundle\Security\Authorization\Voter\AlwaysTrueVoter
         public: false
+        priorit: 100
         tags:
             - { name: security.voter }

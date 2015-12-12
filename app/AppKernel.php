@@ -19,6 +19,7 @@ class AppKernel extends Kernel
 
 //            new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new \Rezzza\MailChimpBundle\RezzzaMailChimpBundle(),
 
             new AppBundle\AppBundle(),
         );

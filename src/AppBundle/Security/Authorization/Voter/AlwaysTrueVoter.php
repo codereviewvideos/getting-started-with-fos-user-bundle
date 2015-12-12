@@ -60,7 +60,7 @@ class AlwaysTrueVoter implements VoterInterface
 
         $user = $token->getUser();
 
-        return VoterInterface::ACCESS_DENIED;
+        return VoterInterface::ACCESS_GRANTED;
     }
 
 }

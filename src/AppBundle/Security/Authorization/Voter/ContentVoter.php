@@ -43,6 +43,7 @@ class ContentVoter implements VoterInterface
      */
     public function vote(TokenInterface $token, $content, array $attributes)
     {
+        return VoterInterface::ACCESS_DENIED;
         // check if class of this object is supported by this voter
         if (!$this->supportsClass(get_class($content))) {
             return VoterInterface::ACCESS_ABSTAIN;
